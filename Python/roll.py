@@ -8,7 +8,7 @@ import time
 
 Copyright (C) 2019 Felix K.
 
-Version 1.1
+Version 1.1.1
 
 Permission is hereby granted, free of charge, to any person obtaining
 a copy of this software and associated documentation files (the
@@ -85,7 +85,15 @@ def dice_roll_probe(roll_amount, threshold, correction):
         else:
             successes[i] = False
 
-    print('ROLLS: {0}'.format(rolls))
+    # generate a string to show the rolls in a more intuitive way
+    rolls_str = ''
+    for val in rolls:
+        rolls_str += str(rolls[val]) + ', '
+
+    # remove final comma (the loop appends a white space as well, we have to remove that too
+    rolls_str = rolls_str[:-2]
+
+    print('ROLLS: {0}'.format(rolls_str))
     print('CORRECTION: {0}'.format(correction))
 
     # this is where we try to turn the highest possible amount of failures into successes
