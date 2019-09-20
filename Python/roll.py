@@ -90,7 +90,7 @@ def dice_roll_probe(roll_amount, threshold, correction):
     for val in rolls:
         rolls_str += str(rolls[val]) + ', '
 
-    # remove final comma (the loop appends a white space as well, we have to remove that too
+    # remove final comma (the loop appends a white space as well, we have to remove that too)
     rolls_str = rolls_str[:-2]
 
     print('ROLLS: {0}'.format(rolls_str))
